@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" text="text/css" href="css/style.css">
+        <title>0 Cookies</title>
+    </head>
+    <body>
+
+        <p id="cookiesPerSecond">You are gaining 0 cookies per/s</p>
+
+        <a href=# onClick="add()"><img src="cookie2.png"></a>
+        <br><br>
+
+        You got:
+        <input type="text" id="text" disabled style= text-align:center value=0>        
+        Cookies
+        <br><br>
+
+        <button><a href="#" onclick="save()">Save</a></button>
+        <button><a href="#" onclick="load()">Load</a></button>
+        <br><br>
+
+        <p id="ammountMultipler">Multiplier Upgrade x2</p>
+        <button><a href="#" onclick="buyMultiplier()"><span id="ammountMultipler2">x2</span></a></button>
+        <p id="costMultiplier">200 Cookies</p>
+        <p id="currentMultiplier">Your Current Multiplier is x1</p>
+        <br><br>
+
+        <div id="upgrades">
+            <p>Buy 1 Auto Click</p>
+            <button><a href="#" onclick="buyAutoClick()"><img src="click.jpg" height="30" width="20"></a></button>
+            <p id="costAutoClick">12 Cookies</p>
+            <p id="ammountAutoClick">You Own 0 Auto Clickers</p>
+            <br><br>
+
+            <p>Buy 1 Farm</p>
+            <button><a href="#" onclick="buyFarm()"><img src="fazenda.jpg" height="30" width="20"></a></button>
+            <p id="costFarms">15 Cookies</p>
+            <p id="ammountFarms">You Own 0 Farms</p>
+            <br><br>
+
+            <p>Buy 1 Cow</p>
+            <button><a href="#" onclick="buyCow()"><img src="vaca.jpg" height="30" width="20"></a></button>
+            <p id="costCows">15 Cookies</p>
+            <p id="ammountCows">You Own 0 Cow</p>
+        </div>
+
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
