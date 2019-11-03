@@ -5,6 +5,7 @@ var multiplier = 1;
 var autoClick = 0; 
 var farms = 0; 
 var cows = 0;
+var grandma = 0;
 
 function update(){
     document.getElementById('text').value = cookiecount;
@@ -20,15 +21,18 @@ function update(){
     document.getElementById('ammountFarms').innerHTML = "You Own " + farms + " Farms";
     document.getElementById('costFarms').innerHTML = ((farms + 1) * 15) + " Cookies";
     document.getElementById('ammountCows').innerHTML = "You Own " + cows + " Cows";
-    document.getElementById('costCows').innerHTML = ((cows + 1) * 20) + " Cookies";
+    document.getElementById('costCows').innerHTML = ((cows + 1) * 30) + " Cookies";
+    document.getElementById('ammountGrandma').innerHTML = "You Own " + grandma + " Cows";
+    document.getElementById('costGrandma').innerHTML = ((grandma + 1) * 100) + " Cookies";
 
-    document.getElementById('cookiesPerSecond').innerHTML = "You Are Gaining " + (((autoClick) + (farms * 2) + (cows * 3)) * multiplier) + " Cookies per/s";
+    document.getElementById('cookiesPerSecond').innerHTML = "You Are Gaining " + (((autoClick) + (farms * 2) + (cows * 3) + (grandma * 4)) * multiplier) + " Cookies per/s";
 }
 
 function timer(){
     cookiecount = cookiecount + autoClick * multiplier;
     cookiecount = cookiecount + farms * 2 * multiplier;
     cookiecount = cookiecount + cows * 3 * multiplier;
+    cookiecount = cookiecount + grandma * 4 * multiplier;
     update();
 }
 setInterval(timer, 1000);
@@ -43,6 +47,7 @@ function save(){
     localStorage.setItem("autoClick", autoClick);
     localStorage.setItem("farms", farms);
     localStorage.setItem("cows", cows);
+    localStorage.setItem("grandma", grandma);
     localStorage.setItem("multiplier", multiplier);
 }
 
@@ -55,11 +60,14 @@ function load(){
     farms = parseInt(farms);
     cows = localStorage.getItem("cows");
     cows = parseInt(cows);
+    grandma = localStorage.getItem("grandma");
+    grandma = parseInt(grandma);
     multiplier = localStorage.getItem("multiplier");
     multiplier = parseInt(multiplier);
     update();
 }
 
+//Compra de Upgrades
 function buyAutoClick(){
     if(cookiecount >= ((autoClick + 1) * 12)){
         cookiecount = cookiecount - ((autoClick + 1) * 12);
@@ -76,9 +84,17 @@ function buyFarm(){
 }
 
 function buyCow(){
-    if(cookiecount >= ((cows + 1) * 20)){
-        cookiecount = cookiecount - ((cows + 1) * 20);
+    if(cookiecount >= ((cows + 1) * 30)){
+        cookiecount = cookiecount - ((cows + 1) * 30);
         cows = cows + 1;
+        update();
+    }
+}
+
+function buyGrandma(){
+    if(cookiecount >= ((grandma + 1) * 100)){
+        cookiecount = cookiecount - ((grandma + 1) * 100);
+        grandma = grandma + 1;
         update();
     }
 }
@@ -90,5 +106,3 @@ function buyMultiplier(){
         update();
     }
 }
-
-
