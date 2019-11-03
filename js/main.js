@@ -39,6 +39,7 @@ setInterval(timer, 1000);
 
 function add(){
     cookiecount = cookiecount + 1;
+    document.getElementById("cookie").src = "cookie2.png";
     update();
 }
 
