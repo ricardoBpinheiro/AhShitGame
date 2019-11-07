@@ -1,5 +1,6 @@
 var cookiecount = 0;
 var multiplier = 1;
+var aux = 0;
 
 // Upgrades
 var autoClick = 0; 
@@ -39,6 +40,7 @@ setInterval(timer, 1000);
 
 function add(){
     cookiecount = cookiecount + 1;
+    aux = aux + 1;
     document.getElementById("cookie").src = "cookie2.png";
     update();
 }
