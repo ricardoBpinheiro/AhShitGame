@@ -4,7 +4,29 @@ table, th, td {
     padding: 50px;
 }
 
-#cookieImg{
+#counter{
+    position: relative;
+}
+
+#counter p{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#counterPoints{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#cjImg{
     cursor: pointer;
     transform: scale(1);
     display: block;
@@ -13,10 +35,10 @@ table, th, td {
     width: 300px;
 }
 
-#cookieImg:active {
+#cjImg:active {
     transform: scale(1.03);
 }
 
-#cookiesPerSecond{
+#pointsPerSecond{
     width: 300px;
 }
