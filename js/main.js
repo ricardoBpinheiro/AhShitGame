@@ -8,6 +8,7 @@ var farms = 0;
 var cows = 0;
 var grandma = 0;
 var bike = 0;
+var train = 0;
 
 function update(){
     document.getElementById('text').value = pointcount;
@@ -28,8 +29,10 @@ function update(){
     document.getElementById('costGrandma').innerHTML = ((grandma + 1) * 100) + " Shit Points";
     document.getElementById('ammountBike').innerHTML = "You Own " + bike + " Bikes";
     document.getElementById('costBike').innerHTML = ((bike + 1) * 300) + " Shit Points"
+    document.getElementById('ammountTrain').innerHTML = "You Own " + train + " Bikes";
+    document.getElementById('costTrain').innerHTML = ((train + 1) * 1000) + " Shit Points"
 
-    document.getElementById('pointsPerSecond').innerHTML = "You Are Gaining " + (((autoClick) + (farms * 2) + (cows * 3) + (grandma * 4) + (bike * 10)) * multiplier) + " Shit Points per/s";
+    document.getElementById('pointsPerSecond').innerHTML = "You Are Gaining " + (((autoClick) + (farms * 2) + (cows * 3) + (grandma * 4) + (bike * 10) + (train * 100)) * multiplier) + " Shit Points per/s";
 }
 
 function timer(){
@@ -38,6 +41,7 @@ function timer(){
     pointcount = pointcount + cows * 3 * multiplier;
     pointcount = pointcount + grandma * 4 * multiplier;
     pointcount = pointcount + bike * 10 * multiplier;
+    pointcount = pointcount + train * 10 * multiplier;
     update();
 }
 setInterval(timer, 1000);
@@ -56,6 +60,7 @@ function save(){
     localStorage.setItem("cows", cows);
     localStorage.setItem("grandma", grandma);
     localStorage.setItem("bike", bike);
+    localStorage.setItem("train", train);
     localStorage.setItem("multiplier", multiplier);
 }
 
@@ -72,6 +77,8 @@ function load(){
     grandma = parseInt(grandma);
     bike = localStorage.getItem("bike");
     bike = parseInt(bike);
+    train = localStorage.getItem("train");
+    train = parseInt(train);
     multiplier = localStorage.getItem("multiplier");
     multiplier = parseInt(multiplier);
     update();
@@ -113,6 +120,14 @@ function buyBike(){
     if(pointcount >= ((bike + 1) * 300)){
         pointcount = pointcount - ((bike + 1) * 300);
         bike = bike + 1;
+        update();
+    }
+}
+
+function buyTrain(){
+    if(pointcount >= ((train + 1) * 1000)){
+        pointcount = pointcount - ((train + 1) * 1000);
+        train = train + 1;
         update();
     }
 }
