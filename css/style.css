@@ -39,6 +39,30 @@ table, th, td {
     transform: scale(1.03);
 }
 
+#upgrades{
+    transform: scale(1);
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 300px;
+}
+
+#shop{
+    transform: scale(1);
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 300px;
+}
+
+#botoes{
+    transform: scale(1);
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100px;
+}
+
 #pointsPerSecond{
     width: 300px;
 }
